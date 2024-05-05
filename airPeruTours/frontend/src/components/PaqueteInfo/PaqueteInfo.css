@@ -1,0 +1,90 @@
+.paqueteInfo2{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #00000090;
+    display: grid;
+}
+
+.paqueteInfoContainer{
+    place-self: center;
+    width: max(70vw,330px);
+    color: #808080;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    animation: fadeInPopup 2s;
+
+}
+
+/* Efecto popup */
+.paqueteInfo{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 5%;
+    background-color: #00000090;
+    display: grid;
+    
+    transform: translateY(-50%);
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.paqueteInfo-content{
+    
+    place-self: center;
+    /*width: max(70vw,330px);*/
+    width: 100%;
+    color: #808080;
+    background-color: #C8DAD8;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 30px;
+    border-radius: 8px;
+    font-size: 14px;
+
+    opacity: 0;
+    height: 100%;
+    
+}
+.paqueteInfo-content-close{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+.paqueteInfo-content-close img{
+    width: 25px;
+    cursor: pointer;
+}
+.paqueteInfo.active{
+    animation: popupAnimation 1500ms ease-in-out forwards;
+}
+.paqueteInfo.active .paqueteInfo-content{
+    opacity: 1;
+    transition: all 300ms ease-in-out 1500ms;
+}
+
+@keyframes popupAnimation {
+    0%{
+        width: 0%;
+        height: 0%;
+    }
+    50%{
+        width: 90%;
+        height: 2px;
+    }
+    100%{
+        width: 90%;
+        height: 90%;
+    }
+}
